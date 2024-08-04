@@ -1,0 +1,37 @@
+.ant-table {
+    margin-top: 8px;
+    width: 99.8%;
+  }
+  
+  .ant-table-thead th {
+    border: 1px solid #d12d4e;
+    align-items: center;
+  }
+
+  thead[class*="ant-table-thead"] th{
+  background-color: #d12d4e   !important;
+  }
+  
+  .ant-table-tbody tr td {
+    border: 1px solid #b3aeae; 
+  }
+  
+
+  .container-button .edit-icon{
+    background-color: rgb(42, 143, 238);
+    
+  }
+  .container-button .delete-icon{
+    background-color: red;
+    
+  }
+
+
+.toolbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-right: 10px;
+}
+
+  
