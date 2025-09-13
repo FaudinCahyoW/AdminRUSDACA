@@ -25,7 +25,6 @@ function DataForm(props, ref) {
   }));
 
   const [NamaLengkap, setNamaLengkap] = useState("");
-  const [NIK, setNIK] = useState("");
   const [LuasRumah, setLuasRumah] = useState("");
   const [JmlPenghuni, setJmlPenghuni] = useState("");
   const [JnsToilet, setJnsToilet] = useState("");
@@ -40,7 +39,7 @@ function DataForm(props, ref) {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`https://6a34-103-162-112-254.ngrok-free.app/data/ambildata/${idData}`, {
+      const response = await axios.get(`https://84a67d6d7383.ngrok-free.app/data/ambildata/${idData}`, {
         headers: {
           "ngrok-skip-browser-warning": "69420",
           "Content-type": "application/json",
@@ -52,7 +51,6 @@ function DataForm(props, ref) {
       if (data) {
         setNamaLengkap(data.nama_lengkap || "");
         setLuasRumah(data.luas_rumah || "");
-        setNIK(data.nik || "");
         setJmlPenghuni(data.jml_penghuni || "");
         setJnsToilet(data.sdia_toilet || "");
         setJnsKamarMandi(data.jenis_kmrMandi || "");
@@ -63,7 +61,6 @@ function DataForm(props, ref) {
         console.log("Data setelah set state:", {
           NamaLengkap,
           LuasRumah,
-          NIK,
           JmlPenghuni,
           JnsToilet,
           JnsKamarMandi,
@@ -83,7 +80,6 @@ function DataForm(props, ref) {
   async function handleSubmit() {
     const body = {
       nama_lengkap: NamaLengkap,
-      nik: NIK,
       luas_rumah: LuasRumah,
       jumlah_penghuni: JmlPenghuni,
       sdia_toilet: JnsToilet,
@@ -99,7 +95,7 @@ function DataForm(props, ref) {
     };
     if (mode === "edit") {
       await axios
-        .put(`https://6a34-103-162-112-254.ngrok-free.app/data/editdata/${idData}`, JSON.stringify(body), {
+        .put(`https://84a67d6d7383.ngrok-free.app/data/editdata/${idData}`, JSON.stringify(body), {
           headers: headersLogin,
         })
         .then(() => {
@@ -140,19 +136,6 @@ function DataForm(props, ref) {
           style={{ marginBottom: '19px' }} 
         >
           <Input name="nama_lengkap" value={NamaLengkap} onChange={(e) => setNamaLengkap(e.target.value)} />
-        </Form.Item>
-
-        <Form.Item
-          label="Nomor NIK"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-          className="form-item"
-          style={{ marginBottom: '19px' }} 
-        >
-          <Input name="nik" value={NIK} onChange={(e) => setNIK(e.target.value)} />
         </Form.Item>
 
         <Form.Item

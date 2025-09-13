@@ -44,7 +44,7 @@ const DashboardPage = () => {
   useEffect(() =>{
     const hisData = async () => {
       try{
-        const res = await axios.get('https://14eb-103-162-112-254.ngrok-free.app/data/ambildata',{
+        const res = await axios.get('https://84a67d6d7383.ngrok-free.app/data/ambildata',{
           headers: {
             "ngrok-skip-browser-warning": "69420",
             "Content-type": "application/json",
@@ -238,7 +238,7 @@ const DashboardPage = () => {
   //OPTIONS RW
   //Tampil data pada capsule atas
   useEffect(() => {
-    axios.get('https://9045-103-162-112-254.ngrok-free.app/data/ambildata',{
+    axios.get('https://84a67d6d7383.ngrok-free.app/data/ambildata',{
       headers: {
         "ngrok-skip-browser-warning": "69420",
         "Content-type": "application/json",
@@ -257,7 +257,7 @@ const DashboardPage = () => {
   //tampil data pada capsule atas
 
   useEffect(() => {
-    axios.get('https://9045-103-162-112-254.ngrok-free.app/data/auth', {
+    axios.get('https://84a67d6d7383.ngrok-free.app/data/auth', {
       headers: {
         "ngrok-skip-browser-warning": "69420",
         "Content-type": "application/json",

@@ -32,7 +32,7 @@ const DataWarga = () => {
     const fetchData = async () => {
         try {
             setIsLoading(true); // Set loading to true before fetching data
-            const response = await axios.get('https://6a34-103-162-112-254.ngrok-free.app/data/ambildata', {
+            const response = await axios.get('https://84a67d6d7383.ngrok-free.app/data/ambildata', {
                 headers: {
                     "ngrok-skip-browser-warning": "69420",
                     "Content-type": "application/json",
@@ -51,7 +51,6 @@ const DataWarga = () => {
             const convert = datas?.map((item, index) => ({
                 No: index + 1,
                 NamaLengkap: item.nama_lengkap,
-                NIK: item.nik,
                 LuasRumah: item.luas_rumah,
                 JmlPenghuni: item.jml_penghuni,
                 JnsToilet: item.sdia_toilet,
@@ -86,7 +85,7 @@ const DataWarga = () => {
 
     // Navigation Edit Data
     const editData = (record) => {
-        const id = record.nik;
+        const id = record.rand;
         navigate(`/data/editData/${id}`);
     };
 
@@ -95,7 +94,7 @@ const DataWarga = () => {
 
     const handleOk = async () => {
         try {
-            await axios.delete(`https://6a34-103-162-112-254.ngrok-free.app/data/hapusdata/${idDataDelete}`, {
+            await axios.delete(`https://84a67d6d7383.ngrok-free.app/data/hapusdata/${idDataDelete}`, {
                 headers: {
                     "ngrok-skip-browser-warning": "69420",
                     "Content-type": "application/json",
@@ -139,7 +138,6 @@ const DataWarga = () => {
             align: 'center'
         },
         { title: 'Nama Lengkap', dataIndex: 'nama_lengkap', align: 'center', key: 'nama_lengkap' },
-        { title: 'NIK', dataIndex: 'nik', align: 'center', key: 'nik' },
         { title: 'Luas Rumah (m²)', dataIndex: 'luas_rumah', align: 'center', key: 'luas_rumah' },
         { title: 'Jumlah Penghuni', dataIndex: 'jml_penghuni', align: 'center', key: 'jml_penghuni' },
         { title: 'Toilet', dataIndex: 'sdia_toilet', align: 'center', key: 'sdia_toilet' },

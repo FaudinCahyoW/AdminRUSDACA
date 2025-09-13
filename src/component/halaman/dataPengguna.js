@@ -31,7 +31,7 @@ const DataPengguna = () => {
     },[])
       const fetchData = async () => {
         try {
-          const response = await axios.get('https://6a34-103-162-112-254.ngrok-free.app/data/auth', {
+          const response = await axios.get('https://84a67d6d7383.ngrok-free.app/data/auth', {
             headers: {
               "ngrok-skip-browser-warning": "69420",
               "Content-type": "application/json",
@@ -50,7 +50,6 @@ const DataPengguna = () => {
           const convert = datas?.map((item, index) => ({
             No: index + 1,
             Email: item.email,
-            NIK: item.nik,
             LuasRumah: item.luas_rumah,
             NamaLeDataPenggunangkap: item.nama_lengkap,
             NoTelp: item.nomor_telepon,
@@ -91,7 +90,7 @@ const DataPengguna = () => {
 
     const handleOk = async () => {
       try {
-          await axios.delete(`https://6a34-103-162-112-254.ngrok-free.app/data/hapusauth/${idDataDelete}`, {
+          await axios.delete(`https://84a67d6d7383.ngrok-free.app/data/hapusauth/${idDataDelete}`, {
               headers: {
                   "ngrok-skip-browser-warning": "69420",
                   "Content-type": "application/json",
@@ -133,7 +132,6 @@ const DataPengguna = () => {
         align: 'center' 
       },
       { title: 'Email', dataIndex: 'email', align: 'center', key:'email' },
-      { title: 'NIK', dataIndex: 'nik',align: 'center', key:'nik' },
       { title: 'Nama Lengkap', dataIndex: 'nama_lengkap', align: 'center', key:'nama_lengkap'},
       { title: 'Nomor Telp', dataIndex: 'nomor_telepon', align: 'center', key:'nomor_telepon' },
       { title: 'Alamat ', dataIndex: 'alamat_rumah', align: 'center', key:'alamat_rumah'},

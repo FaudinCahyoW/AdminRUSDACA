@@ -30,7 +30,7 @@ const EditData = () => {
             }
             try{
                 if (formEdit.mode === "edit"){
-                    await axios.put(`https://6a34-103-162-112-254.ngrok-free.app/data/editdata/${id}`, JSON.stringify(formEdit.body), {
+                    await axios.put(`https://84a67d6d7383.ngrok-free.app/data/editdata/${id}`, JSON.stringify(formEdit.body), {
                         headers: headersLogin
                     })
                     openNotificationWithIcon("success", "Data edit successfully");
